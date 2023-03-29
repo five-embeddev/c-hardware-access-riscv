@@ -7,7 +7,6 @@
 */
 
 #include <stdint.h>
-#include <string.h>
 
 // Generic C function pointer.
 typedef void (*function_t)(void);
@@ -82,21 +81,21 @@ void _start(void) {
     // Init memory regions
     // Clear the .bss section (global variables with no initial values)
     // Includes thread local .tbss
-    memset((void*)&bss_target_start,
-           0,
-           (&bss_target_end - &bss_target_start));
+    __builtin_memset((void*)&bss_target_start,
+                     0,
+                     (&bss_target_end - &bss_target_start));
 
     // Initialize the .data section (global variables with initial values)
     // Includes thread local .tdata
-    memcpy((void*)&data_target_start,
+    __builtin_memcpy((void*)&data_target_start,
            (const void*)&data_source_start,
            (&data_target_end - &data_target_start));
     // Initialize the .itim section (code moved from flash to SRAM to improve performance)
-    memcpy((void*)&itim_target_start,
+    __builtin_memcpy((void*)&itim_target_start,
            (const void*)&itim_source_start,
            (&itim_target_end - &itim_target_start));
     // Initialize the .lim section (code moved from flash to L2 Cache to improve performance)
-    memcpy((void*)&lim_target_start,
+    __builtin_memcpy((void*)&lim_target_start,
            (const void*)&lim_source_start,
            (&lim_target_end - &lim_target_start));
 

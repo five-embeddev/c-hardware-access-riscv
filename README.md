@@ -8,7 +8,7 @@ exceptions.
 
 More details at either:
 
-- https://five-embeddev.com/
+- https://five-embeddev.com/articles/2023/03/20/c-hardware-access/
 - https://philmulholland.medium.com/ 
 
 ## Files
