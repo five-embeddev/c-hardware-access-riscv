@@ -8,8 +8,8 @@ exceptions.
 
 More details at either:
 
-- https://five-embeddev.com/articles/2023/03/20/c-hardware-access/
-- https://philmulholland.medium.com/ 
+- <https://five-embeddev.com/articles/2023/03/20/c-hardware-access>
+- <https://philmulholland.medium.com/direct-hardware-access-in-c-b77dfe63d3a3>
 
 ## Files
 
